@@ -54,6 +54,12 @@ GEM
     guard (0.3.0)
       open_gem (~> 1.4.2)
       thor (~> 0.14.6)
+    haml (3.0.25)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
     i18n (0.5.0)
     launchy (0.3.7)
       configuration (>= 0.0.5)
@@ -135,6 +141,7 @@ DEPENDENCIES
   autotest-rails
   devise
   guard-spork!
+  haml-rails
   rails (= 3.0.3)
   rb-fsevent
   rspec-rails
