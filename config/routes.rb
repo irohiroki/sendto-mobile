@@ -1,4 +1,7 @@
 SendtoMobile::Application.routes.draw do
+  get "/send" => "links#send_"
+  get "/receive" => "links#receive_"
+
   devise_for :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
