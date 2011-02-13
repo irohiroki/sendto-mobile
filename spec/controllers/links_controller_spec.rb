@@ -18,7 +18,7 @@ describe LinksController do
   end
 
   describe "GET receive" do
-    let(:u){ mock_model(User, :link => 'http://foo.com').as_null_object }
+    let(:u){ mock_model(User, :escaped_link => 'http://foo.com').as_null_object }
 
     it "redirects to the saved link" do
       get 'receive_'

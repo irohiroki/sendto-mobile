@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110211172928) do
+ActiveRecord::Schema.define(:version => 20110213081807) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                                :default => "", :null => false
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20110211172928) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "link",                 :limit => 2048
+    t.string   "escaped_link",         :limit => 2048
     t.string   "title",                :limit => 2048
   end
 

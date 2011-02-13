@@ -4,6 +4,6 @@ class LinksController < ApplicationController
   end
 
   def receive_
-    redirect_to current_user.link
+    redirect_to current_user.escaped_link
   end
 end
