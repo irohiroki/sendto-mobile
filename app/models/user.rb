@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :link, :title
 
+  validates :escaped_link, :presence => true
+
   def link=(l)
     @link = l.tap do
       m = l.match(%r{^((?:ftp|https?)://)(.*)}m)
