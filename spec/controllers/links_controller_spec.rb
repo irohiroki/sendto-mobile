@@ -1,11 +1,14 @@
 require 'spec_helper'
 
 describe LinksController do
-  before { @controller.stub(:current_user).and_return(u) }
+  let(:u){ create_user }
+
+  before do
+    @controller.stub(:current_user).and_return(u)
+    sign_in u
+  end
 
   describe "GET send" do
-    let(:u){ mock_model(User).as_null_object }
-
     it "should be successful" do
       get 'send_', 'link' => 'http://example.com', 'title' => 'example'
       response.should be_success
@@ -18,7 +21,7 @@ describe LinksController do
   end
 
   describe "GET receive" do
-    let(:u){ mock_model(User, :escaped_link => 'http://foo.com').as_null_object }
+    before { u.update_attribute :link, 'http://foo.com' }
 
     it "redirects to the saved link" do
       get 'receive_'
