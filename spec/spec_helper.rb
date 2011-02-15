@@ -18,6 +18,11 @@ Spork.prefork do
 
     ActiveSupport::Dependencies.clear
   end
+
+  Webrat.configure do |config|
+    config.mode = :rack
+    config.open_error_files = false
+  end
 end
 
 Spork.each_run do
