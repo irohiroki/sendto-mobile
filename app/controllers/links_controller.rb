@@ -6,6 +6,10 @@ class LinksController < ApplicationController
   end
 
   def receive_
-    redirect_to current_user.escaped_link
+    if l = current_user.escaped_link
+      redirect_to l
+    else
+      render
+    end
   end
 end

@@ -22,4 +22,16 @@ describe "Links" do
       response.should contain("Sorry, unsupported link")
     end
   end
+
+  describe "receive" do
+    context 'without any link to receive' do
+      before { User.first.clear_link }
+
+      it 'shows the default page' do
+        visit receive_path
+        sign_in
+        response.should contain("You have no link to receive")
+      end
+    end
+  end
 end
