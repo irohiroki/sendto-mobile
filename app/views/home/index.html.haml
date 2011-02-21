@@ -13,7 +13,7 @@
 
 #picture
   #sendto
-    %a(title="Drag this to your bookmark bar!" href="(function(){var%20w=window,d=document,e=encodeURIComponent,n=w.open(%22http://sendto-mobile.heroku.com/send?link=%22+e(d.location)+%22&title=%22+e(d.title),%22stm%22,%22left=%22+((w.screenX||w.screenLeft)+10)+%22,top=%22+((w.screenY||w.screenTop)+10)+%22,width=240px,height=135px,resizable=1,alwaysRaised=1%22);w.setTimeout(function(){n.focus()},300)})();")
+    %a(title="Drag this to your bookmark bar!" href="javascript:(function(){var%20w=window,d=document,e=encodeURIComponent,n=w.open(%22http://sendto-mobile.heroku.com/send?link=%22+e(d.location)+%22&title=%22+e(d.title),%22stm%22,%22left=%22+((w.screenX||w.screenLeft)+10)+%22,top=%22+((w.screenY||w.screenTop)+10)+%22,width=240px,height=135px,resizable=1,alwaysRaised=1%22);w.setTimeout(function(){n.focus()},300)})();")
       Sendto-mobile
   #receiveon
     %a(title="Bookmark this page on your phone!" href="http://sendto-mobile.heroku.com/receive")
