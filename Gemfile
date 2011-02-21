@@ -7,7 +7,6 @@ gem 'rails', '3.0.4'
 
 gem 'devise'
 gem 'haml-rails'
-gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -34,5 +33,6 @@ group :development, :test do
   gem 'rb-fsevent'
   gem 'rspec-rails'
   gem 'ruby-debug19'
+  gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'webrat'
 end
