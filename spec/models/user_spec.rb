@@ -7,8 +7,8 @@ describe User do
 
   describe '#escaped_link' do
     it 'escapes links' do
-      u.link = "http://a' \n"
-      u.escaped_link.should eq('http://a%27+%0A')
+      u.link = "http://a%A1-._~:/?#[]@!$&'()*+,;= \"^|`{}<>`\n\t\\"
+      u.escaped_link.should eq("http://a%A1-._~:/?#[]@!$&'()*+,;=%20%22%5E%7C%60%7B%7D%3C%3E%60%0A%09%5C")
     end
 
     it 'accepts ftp' do

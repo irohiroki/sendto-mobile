@@ -15,13 +15,11 @@ class User < ActiveRecord::Base
 
   def link=(l)
     @link = l.tap do
-      self.escaped_link =
-        if l.present? && (m = l.match(%r{^((?:ftp|https?)://)(.+)}m))
-          scheme, path = m[1,2]
-          scheme + CGI.escape(path)
-        else
-          ''
-        end
+      self.escaped_link = %r{^(?:ftp|https?)://} === l ? escape(l) : ''
     end
+  end
+
+  def escape(s)
+    s.gsub(%r{[^-\w.~:/?#\[\]@!$&'()*+,;=%]}){|c| "%%%02X" % c.ord }
   end
 end
