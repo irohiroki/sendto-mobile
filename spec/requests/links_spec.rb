@@ -25,8 +25,6 @@ describe "Links" do
 
   describe "receive" do
     context 'without any link to receive' do
-      before { User.first.clear_link }
-
       it 'shows the default page' do
         visit receive_path
         sign_in

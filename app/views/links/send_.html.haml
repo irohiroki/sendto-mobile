@@ -1,8 +1,8 @@
 %p#msg
-  - if current_user.valid?
+  - if @link.valid?
     %span#sent Successfully sent:
-    %span#page_title= params[:title]
-    %span#link= params[:link]
+    %span#page_title= @link.title
+    %span#link= @link.uri
   - else
     %span#sorry Sorry, unsupported link:
-    %span#link= params[:link]
+    %span#link= @link.uri

@@ -14,18 +14,36 @@ describe LinksController do
       response.should be_success
     end
 
-    it 'saves the link and the title' do
-      u.should_receive(:update_attributes).with('link' => 'http://example.com', 'title' => 'example')
-      get 'send_', 'link' => 'http://example.com', 'title' => 'example'
+    context "if user has already a link" do
+      before do
+        u.create_link(:uri => 'http://a', :title => 'a')
+        get 'send_', 'link' => 'http://example.com', 'title' => 'example'
+      end
+
+      it 'updates the link' do
+        u.link.uri.should eq 'http://example.com'
+      end
+
+      it 'updates the title' do
+        u.link.title.should eq 'example'
+      end
+    end
+
+    context "if user has no link yet" do
+      pending
     end
   end
 
   describe "GET receive" do
-    before { u.update_attribute :link, 'http://foo.com' }
+    before { u.create_link :uri => 'http://foo.com' }
 
     it "redirects to the saved link" do
       get 'receive_'
       response.should redirect_to('http://foo.com')
+    end
+
+    context "after an unsuccessful send" do
+      pending
     end
   end
 end
