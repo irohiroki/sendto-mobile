@@ -29,6 +29,7 @@ gem 'haml-rails'
 # and rake tasks are available in development mode:
 group :development, :test do
   gem 'autotest-rails'
+  gem 'guard-livereload'
   gem 'guard-spork', :git => 'https://github.com/irohiroki/guard-spork.git'
   gem 'rb-fsevent'
   gem 'rspec-rails'
