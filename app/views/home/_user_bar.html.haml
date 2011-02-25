@@ -1,0 +1,12 @@
+#user_bar
+  - if user_signed_in?
+    %p#signed_in
+      Signed in as
+      %span#email= current_user.email
+    %p#sign_out
+      = link_to "Sign out", destroy_user_session_path
+  - else
+    %p#sign_in
+      = link_to "Sign in", new_user_session_path
+    %p#sign_up
+      = link_to "Sign up", new_user_registration_path
