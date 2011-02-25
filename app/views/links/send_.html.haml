@@ -1,8 +1,31 @@
-%p#msg
+- content_for :css do
+  :css
+    body {
+      background: #cdecff;
+    }
+    .msg {
+      font-family: Georgia;
+      font-size: 150%;
+    }
+    #link_title, #link {
+      background: #ccc;
+      margin: 0;
+    }
+    #link_title {
+      padding: 6px 6px 0;
+    }
+    #link {
+      padding: 4px;
+    }
+    #link input {
+      font-size: 108%;
+    }
+
+#msg
   - if @link.valid?
-    %span#sent Successfully sent:
-    %span#page_title= @link.title
-    %span#link= @link.uri
+    %p.msg#sent Just sent.
+    %p#link_title= @link.title
   - else
-    %span#sorry Sorry, unsupported link:
-    %span#link= @link.uri
+    %p.msg#sorry Sorry, unsupported link:
+  %p#link
+    %input{:type => "text", :value => @link.uri, :size => 40}

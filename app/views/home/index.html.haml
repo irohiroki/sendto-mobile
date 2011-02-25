@@ -1,3 +1,6 @@
+- content_for :title_extra do
+  = "- Send a link to your mobile browser. and vice versa."
+
 = render 'user_bar'
 
 - authority = request.host + (request.port == 80 ? '' : ":#{request.port}")
