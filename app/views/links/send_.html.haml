@@ -8,17 +8,20 @@
       font-size: 150%;
     }
     #link_title, #link {
-      background: #ccc;
       margin: 0;
     }
     #link_title {
+      background-image: -moz-linear-gradient(top, #eeeeee 0%, #bbbbbb 88%);
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeeeee), color-stop(0.88, #bbbbbb));
       padding: 6px 6px 0;
     }
     #link {
+      background-color: #bbbbbb;
       padding: 4px;
     }
     #link input {
       font-size: 108%;
+      width: 100%;
     }
 
 #msg
@@ -29,3 +32,9 @@
     %p.msg#sorry Sorry, unsupported link:
   %p#link
     %input{:type => "text", :value => @link.uri, :size => 40}
+
+= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"
+:javascript
+  $(function(){
+    $('#link input').width($('#link').width() - 6);
+  });
