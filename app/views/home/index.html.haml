@@ -1,13 +1,56 @@
 - content_for :title_extra do
   = "- Send a link to your mobile browser. and vice versa."
 
+%h1#logo
+  %span#logo_main
+    Sendto-Mobile.net
+  %span#logo_cont
+    and vice versa.
+%p#description
+  Send a link to your mobile, iPhone, and such. We remember a link for you, and will redirect your browser to it when you demand.
+
+#how
+  %h2
+    How
+
+  - authority = request.host + (request.port == 80 ? '' : ":#{request.port}")
+
+  %ol
+    %li
+      Add the
+      %a(title="Drag this to your bookmark bar!" href="javascript:(function(){var%20w=window,d=document,e=encodeURIComponent,n=w.open(%22http://#{authority}/send?link=%22+e(d.location)+%22&title=%22+e(d.title),%22stm%22,%22left=%22+((w.screenX||w.screenLeft)+10)+%22,top=%22+((w.screenY||w.screenTop)+10)+%22,width=240px,height=135px,resizable=1,alwaysRaised=1%22);w.setTimeout(function(){n.focus()},300)})();")
+        Sendto-Mobile
+      bookmarklet to your browser.
+    %li
+      Meet a page you want to send, and invoke the bookmarklet (You may be prompted to sign up for the first time. Of course it's free.)
+    %li
+      Open
+      %span
+        http://#{authority}/r
+      on your mobile, iPhone, or (whatever) browser, and you're there!
+
 = render 'user_bar'
 
-- authority = request.host + (request.port == 80 ? '' : ":#{request.port}")
-#picture
-  #sendto
-    %a(title="Drag this to your bookmark bar!" href="javascript:(function(){var%20w=window,d=document,e=encodeURIComponent,n=w.open(%22http://#{authority}/send?link=%22+e(d.location)+%22&title=%22+e(d.title),%22stm%22,%22left=%22+((w.screenX||w.screenLeft)+10)+%22,top=%22+((w.screenY||w.screenTop)+10)+%22,width=240px,height=135px,resizable=1,alwaysRaised=1%22);w.setTimeout(function(){n.focus()},300)})();")
-      Sendto-mobile
-  #receiveon
-    %a(title="Bookmark this page on your phone!" href="http://#{authority}/receive")
-      Receiveon-mobile
+#tip
+  %h2
+    Tip
+  %p
+    Want a "Receive-on-Mobile" bookmark? Since the page redirects you right away, you need to
+    %a(href="")
+      clear your link
+    first. Then bookmark
+    %a(title="Receive-on-Mobile" href="http://#{authority}/r")
+      Receive-on-Mobile
+    = '.'
+
+%a(link="terms")
+  #terms
+    %h2
+      Terms
+    %ul
+      %li
+        Don't "send" links of which the existance is confidencial (like ones for recovering a password.)
+      %li
+        The sent links may be used in a massive statistical form decoupled with your account.
+      %li
+        There is no warranties on using this service (remembering and recalling a link) and it may stop its service without prior notice.

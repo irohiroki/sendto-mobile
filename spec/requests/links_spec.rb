@@ -26,7 +26,7 @@ describe "Links" do
   describe "receive" do
     context 'without any link to receive' do
       it 'shows the default page' do
-        visit receive_path
+        visit r_path
         sign_in
         response.should contain("You have no link to receive")
       end
