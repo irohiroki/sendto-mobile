@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe "Links" do
-  before { create_user }
+  before(:all) { create_user }
+  after(:all) { User.delete_all }
 
   def sign_in
     fill_in "Email", :with => 'e@m.com'
@@ -29,6 +30,18 @@ describe "Links" do
         visit r_path
         sign_in
         response.should contain("You have no link to receive")
+      end
+    end
+  end
+
+  describe "clear" do
+    context "when he has a link" do
+      before { User.first.create_link(:uri => 'http://irohiroki.com') }
+
+      it "clears the link" do
+        visit clear_path
+        sign_in
+        response.should contain("Cleard. You can bookmark this page.")
       end
     end
   end

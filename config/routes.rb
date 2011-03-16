@@ -1,4 +1,5 @@
 SendtoMobile::Application.routes.draw do
+  get "/clear" => "links#clear"
   get "/send" => "links#send_"
   get "/r" => "links#receive_"
 
