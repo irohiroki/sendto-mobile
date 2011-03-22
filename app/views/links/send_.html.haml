@@ -1,28 +1,5 @@
 - content_for :css do
-  :css
-    body {
-      background: #cdecff;
-    }
-    .msg {
-      font-family: Georgia;
-      font-size: 150%;
-    }
-    #link_title, #link {
-      margin: 0;
-    }
-    #link_title {
-      background-image: -moz-linear-gradient(top, #eeeeee 0%, #bbbbbb 88%);
-      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeeeee), color-stop(0.88, #bbbbbb));
-      padding: 6px 6px 0;
-    }
-    #link {
-      background-color: #bbbbbb;
-      padding: 4px;
-    }
-    #link input {
-      font-size: 108%;
-      width: 100%;
-    }
+  = stylesheet_link_tag 'send'
 
 #msg
   - if @link.valid?

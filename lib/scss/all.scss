@@ -1,0 +1,60 @@
+$skyblue: #c1e1ed;
+
+.clearfix {
+	⁄zoom:1;
+	display: block;
+}
+
+.clearfix:after {
+	clear: both;
+	content: '';
+	display: block;
+}
+
+a:link {
+	color: #273d3b;
+}
+a:visited {
+	color: #131919;
+}
+a:hover {
+	color: #76c7c6;
+}
+
+body {
+	color: #131919;
+	font-family: Geogia, Serif;
+	margin: 8px;
+}
+
+h1, h2 {
+	margin: 0;
+}
+
+#description {
+	background-color: #fffa6b;
+	font-size: 135%;
+	width: 600px;
+}
+
+#figure {
+	margin: 3em 0 1em;
+}
+
+#header {
+}
+
+#logo {
+	background-image: url(/images/logo.png);
+	height: 94px;
+	text-indent: -9999px;
+	width: 475px;
+}
+
+#logo_extra {
+	color: #135ce3;
+	font-family: Geogia, Serif;
+	font-size: 114%;
+	font-style: italic;
+	margin: 0.8em 0 1.2em;
+}
