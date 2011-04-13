@@ -2,11 +2,16 @@
 <html>
 <head>
   <title>Sendto-Mobile.net <%= yield :title_extra %></title>
+  <%= stylesheet_link_tag 'screen', :media => 'screen, projection' %>
+  <%= stylesheet_link_tag 'print', :media => 'print' %>
+  <!--[if lt IE 8]>
+    <%= stylesheet_link_tag 'ie', :media => 'screen, projection' %>
+  <![endif]-->
   <%= stylesheet_link_tag 'all' %>
 </head>
 <body>
-
+  <div class="container">
 <%= yield %>
-
+  </div>
 </body>
 </html>

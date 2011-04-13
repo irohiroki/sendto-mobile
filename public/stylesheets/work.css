@@ -1,0 +1,23 @@
+@charset "UTF-8";
+article {
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  background-color: white;
+  padding: 0 8px; }
+
+.clearfix {
+  ⁄zoom: 1;
+  display: block; }
+
+.clearfix:after {
+  clear: both;
+  content: '';
+  display: block; }
+
+#link_title {
+  background-image: -moz-linear-gradient(top, #eeeeee 0%, #bbbbbb 88%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeeeee), color-stop(0.88, #bbbbbb)); }
+
+#link {
+  background-color: #bbbbbb; }
