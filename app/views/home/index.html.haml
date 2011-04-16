@@ -1,61 +1,61 @@
 - content_for :title_extra do
   = "- Send a link to your mobile browser. and vice versa."
 
-.span-16.prepend-4
-  #header
-    %h1#logo Sendto-Mobile.net
-    %h2#logo_extra ... and vice versa.
+- content_for :head_extra do
+  = stylesheet_link_tag 'screen', :media => 'screen, projection'
+  = stylesheet_link_tag 'print', :media => 'print'
+  :preserve
+    <!--[if lt IE 8]>
+      #{stylesheet_link_tag 'ie', :media => 'screen, projection'}
+    <![endif]-->
+  = stylesheet_link_tag 'all'
 
-  %p#figure
-    %img(src="/images/figure.png")
+.container
+  .span-16
+    #header
+      %h1#logo Sendto-Mobile.net
+      %h2#logo_extra Send a link to your mobile, iPhone, and such.
 
-  %p#description
-    Send a link to your mobile, iPhone, and such.
-    %br
-    We remember a link for you, and will redirect your browser to it when you demand.
+    %p#figure
+      %img(src="/images/figure.png")
 
-  #how
-    %h2
-      How
+    %h3#description
+      We remember a link for you, and will redirect your browser to it when you demand.
 
     - authority = request.host + (request.port == 80 ? '' : ":#{request.port}")
 
+    %h2 How
     %ol
       %li
-        Add the
-        %a(title="Drag this to your bookmark bar!" href="javascript:(function(){var%20w=window,d=document,e=encodeURIComponent,n=w.open(%22http://#{authority}/send?link=%22+e(d.location)+%22&title=%22+e(d.title),%22stm%22,%22left=%22+((w.screenX||w.screenLeft)+10)+%22,top=%22+((w.screenY||w.screenTop)+10)+%22,width=240px,height=135px,resizable=1,alwaysRaised=1%22);w.setTimeout(function(){n.focus()},300)})();")
-          Sendto-Mobile
+        Add
+        %a(title="Drag this to your bookmark bar!" href="javascript:(function(){var%20w=window,d=document,e=encodeURIComponent,n=w.open(%22http://#{authority}/send?link=%22+e(d.location)+%22&title=%22+e(d.title),%22stm%22,%22left=%22+((w.screenX||w.screenLeft)+10)+%22,top=%22+((w.screenY||w.screenTop)+10)+%22,width=240px,height=135px,resizable=1,alwaysRaised=1%22);w.setTimeout(function(){n.focus()},300)})();") Sendto-Mobile
         bookmarklet to your browser.
       %li
-        Meet a page you want to send, and invoke the bookmarklet (You may be prompted to sign up for the first time. Of course it's free.)
+        You bump into a page that you want to send and invoke the bookmarklet (You may be prompted to sign up for the first time. Of course it's free.)
       %li
         Open
-        %span
-          http://#{authority}/r
+        %a(href="http://#{authority}/r") http://#{authority}/r
         on your mobile, iPhone, or (whatever) browser, and you're there!
 
-  = render 'user_bar'
+    = render 'user_bar'
 
-  #tip
-    %h2
-      Tip
+    %h2 Tip
     %p
       Want a "Receive-on-Mobile" bookmark? Since the page redirects you right away, you need to
-      %a(href="/clear")
-        clear your link
+      %a(href="/clear") clear your link
       first. Then bookmark
-      %a(title="Receive-on-Mobile" href="http://#{authority}/r")
-        Receive-on-Mobile
+      %a(title="Receive-on-Mobile" href="http://#{authority}/r") Receive-on-Mobile
       = '.'
 
-  %a(link="terms")
-    #terms
-      %h2
-        Terms
-      %ul
-        %li
-          Don't "send" links of which the existance is confidencial (like ones for recovering a password.)
-        %li
-          The sent links may be used in a massive statistical form decoupled with your account.
-        %li
-          There is no warranties on using this service (remembering and recalling a link) and it may stop its service without prior notice.
+    %h2 Terms
+    %ul
+      %li
+        Don't "send" links of which the existance is confidencial (like ones for recovering a password.)
+      %li
+        The sent links may be used in a massive statistical form decoupled with your account.
+      %li
+        There is no warranties on using this service (remembering and recalling a link) and it may stop its service without prior notice.
+
+    %address
+      Produced by
+      %a(hfref="http://twitter.com/irohiroki") @irohiroki
