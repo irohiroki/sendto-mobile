@@ -9,6 +9,7 @@ class LinksController < ApplicationController
   def send_
     @link = current_user.link || current_user.build_link
     @link.update_attributes(:uri => params[:link], :title => params[:title])
+    Log.create :uri => @link.uri if @link.valid?
   end
 
   def receive_

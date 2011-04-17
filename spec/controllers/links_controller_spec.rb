@@ -18,6 +18,8 @@ describe LinksController do
       get 'send_', 'link' => 'http://example.com', 'title' => 'example'
     end
 
+    before { Log.should_receive(:create) }
+
     shared_examples_for "updating and success" do
       it 'updates the link' do
         l.should_receive(:update_attributes).with(:uri => 'http://example.com', :title => 'example')

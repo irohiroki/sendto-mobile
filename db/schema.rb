@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110223172236) do
+ActiveRecord::Schema.define(:version => 20110417125604) do
 
   create_table "links", :force => true do |t|
     t.integer  "user_id"
@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(:version => 20110223172236) do
   end
 
   add_index "links", ["user_id"], :name => "index_links_on_user_id"
+
+  create_table "logs", :force => true do |t|
+    t.string   "uri",        :limit => 2048
+    t.datetime "created_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
