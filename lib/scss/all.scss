@@ -5,6 +5,12 @@
 $base_dark: #96471c;
 $sub_dark: #090696;
 
+@mixin radius($r) {
+	border-radius: $r;
+	-moz-border-radius: $r;
+	-webkit-border-radius: $r;
+}
+
 /*
 .clearfix {
 	⁄zoom:1;
@@ -64,4 +70,16 @@ h2 {
 	font-weight: bold;
 	padding: 0.4em 0 0.1em;
 	margin: 0.4em 0 1em;
+}
+
+#user_bar {
+	background-color: #c3c1ff;
+	border: 4px solid #a6a5e4;
+	font-family: Helvetica, sans-serif;
+	font-size: 114%;
+	padding: 12px;
+	@include radius(12px);
+	span {
+		margin-right: 12px;
+	}
 }
