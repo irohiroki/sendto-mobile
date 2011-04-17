@@ -1,0 +1,28 @@
+body {
+	font-family: Georgia, serif;
+	padding: 4px;
+}
+p {
+	margin: 0 0 0.4em;
+}
+
+.msg {
+	border: 1px solid;
+	font-size: 114%;
+	margin-bottom: 1em;
+	padding: 4px;
+}
+
+#link {
+	font-family: monospace;
+}
+
+#sent {
+	background-color: #b4efb0;
+	border-color: #88d882;
+}
+
+#sorry {
+	background-color: #f8a5a5;
+	border-color: #d88282;
+}

@@ -1,17 +1,10 @@
-- content_for :css do
+- content_for :head_extra do
   = stylesheet_link_tag 'send'
 
-#msg
+#send_
   - if @link.valid?
-    %p.msg#sent Just sent.
+    %p.msg#sent The link has been kept successfully.
     %p#link_title= @link.title
   - else
     %p.msg#sorry Sorry, unsupported link:
-  %p#link
-    %input{:type => "text", :value => @link.uri, :size => 40}
-
-= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"
-:javascript
-  $(function(){
-    $('#link input').width($('#link').width() - 6);
-  });
+  %p#link= @link.uri

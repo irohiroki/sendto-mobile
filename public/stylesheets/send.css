@@ -1,24 +1,23 @@
 body {
-  background: #c1e1ed;
-  color: #131919;
-}
+  font-family: Georgia, serif;
+  padding: 4px; }
+
+p {
+  margin: 0 0 0.4em; }
+
 .msg {
-  font-family: Georgia;
-  font-size: 150%;
-}
-#link_title, #link {
-  margin: 0;
-}
-#link_title {
-  background-image: -moz-linear-gradient(top, #eeeeee 0%, #bbbbbb 88%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeeeee), color-stop(0.88, #bbbbbb));
-  padding: 6px 6px 0;
-}
+  border: 1px solid;
+  font-size: 114%;
+  margin-bottom: 1em;
+  padding: 4px; }
+
 #link {
-  background-color: #bbbbbb;
-  padding: 4px;
-}
-#link input {
-  font-size: 108%;
-  width: 100%;
-}
+  font-family: monospace; }
+
+#sent {
+  background-color: #b4efb0;
+  border-color: #88d882; }
+
+#sorry {
+  background-color: #f8a5a5;
+  border-color: #d88282; }
