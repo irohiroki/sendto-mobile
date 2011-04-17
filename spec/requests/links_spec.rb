@@ -14,7 +14,7 @@ describe "Links" do
     it 'saves a given link' do
       visit send_path, :get, 'link' => 'http://irohiroki.com'
       sign_in
-      response.should contain("Just sent")
+      response.should contain("successfully")
     end
 
     it "doesn't save unsupported uri" do
